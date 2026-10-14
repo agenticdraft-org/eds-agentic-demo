@@ -14,13 +14,14 @@ Delivery automation · plan of record
 Phase 1 is closed; everything below the first item is backlog, in the order it would be picked up.
 
 1.  **Phase 2, the marketplace move (Phases 46–50)** — [plan](https://claude.ai/artifact/MHrwNdYu7y6a2KcRAwfXHz); plugin freeze during Phases 47–48. Phase 50 / Task 3's proof run also closes **Phase 20 / Task 5** and **Phase 23 / Task 4**.
-2.  **Headless** — Phase 9 / Task 5, then Phase 10 / Tasks 2, 4, 5, 6, against the marketplace layout. Needs `CLAUDE_CODE_OAUTH_TOKEN` and your dispatch. **Now (2026-10-13):** a dispatch of an item with no design reference that reaches `delivered` in CI (G190 closed, G191 fixed). Before it: the action-versus-runner comparison in Phase 49 / Task 2 (see the 2026-10-10 entry above); a review-on-every-PR workflow is optional and not scheduled.
-3.  **Phase 35** (G502) — onboarding notices the design it did not apply; Tasks 1 and 2 ready.
-4.  **Phase 32**, then **Phase 21 / Task 5** and **Phase 22 / Task 3** — viewports and assets; file Phase 32's entries first.
-5.  **Phase 53 (spec 34) — closed 2026-10-12**: merged as \#247, all three live steps passed. Open gaps from it, not scheduled: G185 (unauthenticated plugin may still list its tools), G186, G187, G188, G189.
-6.  **Specs 32 and 33 (2026-10-12, proposed, after spec 34)** — design references `extract` does not read. EDS-26 delivered without them, so both are lower than they looked. Read Phase 32 before spec 33: they overlap, and Phase 32 is the better candidate.
-7.  **Phase 37 / Tasks 2–6**, **Phase 36** (spec 29), open gaps without a task (G510, G534, G544, G141, G145, G163, G164).
-8.  **Nice to have** — Phase 6 / Task 4, Phase 12, Phase 23 / Task 2.
+2.  **Authored content as a deliverable** (Phase 36, spec 29) — an item's `## Content` section becomes its own Drive page, previewed in the run and linked from the ticket and the PR. Proposed, not approved: needs your review of spec 29 and an OAuth client for Drive. Details in the section below.
+3.  **Headless** — Phase 9 / Task 5, then Phase 10 / Tasks 2, 4, 5, 6, against the marketplace layout. Needs `CLAUDE_CODE_OAUTH_TOKEN` and your dispatch. **Now (2026-10-13):** a dispatch of an item with no design reference that reaches `delivered` in CI (G190 closed, G191 fixed). Before it: the action-versus-runner comparison in Phase 49 / Task 2 (see the 2026-10-10 entry above); a review-on-every-PR workflow is optional and not scheduled.
+4.  **Phase 35** (G502) — onboarding notices the design it did not apply; Tasks 1 and 2 ready.
+5.  **Phase 32**, then **Phase 21 / Task 5** and **Phase 22 / Task 3** — viewports and assets; file Phase 32's entries first.
+6.  **Phase 53 (spec 34) — closed 2026-10-12**: merged as \#247, all three live steps passed. Open gaps from it, not scheduled: G185 (unauthenticated plugin may still list its tools), G186, G187, G188, G189.
+7.  **Specs 32 and 33 (2026-10-12, proposed, after spec 34)** — design references `extract` does not read. EDS-26 delivered without them, so both are lower than they looked. Read Phase 32 before spec 33: they overlap, and Phase 32 is the better candidate.
+8.  **Phase 37 / Tasks 2–6**, open gaps without a task (G510, G534, G544, G141, G145, G163, G164).
+9.  **Nice to have** — Phase 6 / Task 4, Phase 12, Phase 23 / Task 2.
 
 **Waiting on the human:** approve deleting the seven merged Phase 42 branches; review spec 29 and, for its Phase 36 / Task 1, create an OAuth desktop client ("In production") and set `GDRIVE_CLIENT_ID`, `GDRIVE_CLIENT_SECRET`, `GDRIVE_REFRESH_TOKEN` in `.claude/settings.local.json`; file Phase 32's gap and decision entries; add the four design font families (D530) if EDS-18 should match typographically; approve deleting 12 merged remote branches (listed in `NEXT.md`) (the stashes are done, Phase 41). Nice to have, 6 tasks: Phase 6 / Task 4, Phase 12 and Phase 23 / Task 2. Without them, 16 tasks close the plan of record. No time estimate is given.
 
@@ -38,8 +39,7 @@ Proposed specified, not filed, not counted
 
 Done finished today, kept here for reference
 
-Phase 45
-
+Phase 43
 ## The design loop sees every breakpoint, and a stage calls an operation every time
 
 Tasks 1–5 complete · Task 6 in flight, not counted
@@ -53,8 +53,7 @@ New 2026-10-04 (G155, G144, D123) from the EDS-24 run, which failed at `verify`:
 5.  Task 5 A selector hidden at a measured width does not fail the read *— G157; your shape 1, D124: `hidden: true`, geometry from the first visible match; 10.76 s fail → 1.27 s pass* Merged **PR** [\#231](https://github.com/agenticDraft/aem-eds-ai-workflow-demo/pull/231) merged · `phase-43-task-5-done.md` · §6 amended first · closes on a run whose block hides a measured selector
 6.  Task 6 A design-provider failure is a hard `fail`; `extract` has no attachment fallback *— D131 supersedes D501 (your decision 2026-10-12): a Figma `fail` goes straight to Report fail with the provider's `error_class`; the "Fallback available?" and "Report warn" nodes are gone; with a design URL the resolver prints only `decision=url reference=…`; the image-only source is unchanged* In flight **Branch** `d131-no-design-fallback` `0beef07`, pushed, no PR · `resolve-design-source.test.sh` 21/0, `write-design-reference.test.sh` 101/0 · no route run · D131 in `04-eds-pack-design.md`, D501 and `00-instructions.md` marked (local docs) · not in `02-build-tasks.md`, so no total changes
 
-Phase 44
-
+Phase 23
 ## Comparison quality
 
 2 of 4 remaining
@@ -65,7 +64,6 @@ Tasks 1 (tolerance marker) and 3 (design relevance, threshold 1, provisional) me
 2.  Task 4 Verification *— the "content-dependent, not graded" section is met by three runs* Live run **Needs** plan-gate on a mismatched item: warns, the route continues (your ruling 2026-10-05) · fresh session
 
 Phases 20 · 21 · 22
-
 ## Figma chain: the live halves
 
 3 remaining
@@ -77,7 +75,6 @@ Every build task is merged (PR \#159, 2026-09-28). Unchanged since the last stat
 3.  22 / Task 3 Verification *— images and icons* Live run **Needs** fresh session
 
 Phase 35
-
 ## Onboarding notices the design it did not apply
 
 6 of 6 remaining
@@ -91,8 +88,7 @@ G502, scheduled 2026-09-30 as the next task. In this repo `--text-link: #000` ha
 5.  Task 5 Ask once, record the answer, act on it Blocked **Depends on** Tasks 3, 4
 6.  Task 6 Verification *— the flow on this repo asks once and does not ask again* Blocked **Depends on** Tasks 4, 5 merged · fresh session
 
-Phase 41
-
+Phase 32
 ## A nested node finds its viewport counterparts
 
 4 proposed · not counted
@@ -105,7 +101,6 @@ Specified 2026-09-30 in `archive/next-phase-32.md`; its gap and decision entries
 4.  Task 4 Verification *— suites, then EDS-19 from a fresh session: three viewports at 1280 / 800 / 375* Proposed **Depends on** Tasks 1–3 merged · entries filed
 
 Spec 32
-
 ## write-specs reports the design references extract will not read
 
 5 proposed · not counted · no phase number
@@ -119,7 +114,6 @@ Proposed 2026-10-12 (`32-unread-design-references-spec.md`, local, not committed
 5.  Task 5 Phase 2 — Two sentences in the skill and its criterion checklist Proposed **Depends on** Phase 2 / Task 3 · skill-creator first
 
 Spec 33
-
 ## extract reads one design reference per viewport
 
 5 proposed · not counted · overlaps Phase 32
@@ -132,8 +126,7 @@ Proposed 2026-10-12 (`33-extract-multi-viewport-spec.md`, local). Several explic
 4.  Task 4 Phase 2 — The deviation entry and a decision record *— in `06-dx-core-deviations.md`* Proposed **Depends on** your yes
 5.  Task 5 Phase 3 — Check that the pair and override scripts accept the three-variant file unmodified *— if either rejects it, file a gap, do not edit them here* Proposed **Depends on** Phase 2
 
-Phase 53 · spec 34
-
+Phase 37
 ## Component sizes match the design
 
 6 proposed · not counted
@@ -148,7 +141,6 @@ Planned 2026-10-02 in `NEXT.md`, not yet in `02-build-tasks.md`. Comes from a re
 6.  Task 6 Verification *— suites, then EDS-18 from a fresh session: header 96px, text at y 40, no stroke mismatch* Proposed **Depends on** Tasks 1–5 merged
 
 Phase 9
-
 ## Headless execution
 
 1 of 6 remaining
@@ -158,7 +150,6 @@ The main track (`NEXT.md`). Tasks 2 and 3 are done: a token comment reaches a ga
 1.  Task 5 A headless run, end to end In flight **State** all dependencies done · fixes on `phase-9-task-5-e2e` / `-probe`, not on `main` · three EDS-22 runs did not reach `delivered` · no done record, no PR · **2026-10-13:** run \#35 (EDS-28, `main` `54828ae`, pin `v0.2.2`) passed the fresh start in CI and ran `intake` (**G191** fixed, **G190** closed; the scripts' own answers are not in the log, the driver going on is the evidence). It stopped at the session-tools check: EDS-28 has a design reference and a CI session cannot sign in to Figma, the intended refusal. Next: dispatch an item with no design reference (EDS-22). Still open for this task: a run to `delivered`.
 
 Phase 10
-
 ## Design references without an interactive session
 
 4 of 6 remaining
@@ -171,7 +162,6 @@ Tasks 1 and 3 are done. This workspace is on the Basic Figma plan, so a headless
 4.  Task 6 A headless run with a design reference Blocked **Depends on** Tasks 2, 4, 5 · Phase 9 / Task 3 — done
 
 Phase 36
-
 ## Authored content as a deliverable
 
 7 proposed · not counted
@@ -187,7 +177,6 @@ Proposed by spec 29 (`29-content-authoring-spec.md`, amended 2026-10-02), not ap
 7.  Task 7 Verification *— one route dispatched in CI; you dispatch* Proposed **Depends on** Tasks 1–6 merged
 
 Phase 6
-
 ## A second platform
 
 1 remaining · nice to have
@@ -197,7 +186,6 @@ Nice to have (2026-09-29): the core is proven on this platform first. Tasks 1–
 1.  Task 4 A second platform Nice to have **Depends on** Phase 6 / Task 1 · Phase 2 / Task 7 — both done
 
 Phase 12
-
 ## A reviewable rendered page per work item
 
 4 of 4 remaining
