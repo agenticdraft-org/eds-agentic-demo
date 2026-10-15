@@ -1,6 +1,3 @@
-> It is the delivery automation's plan of record. Files it names (`NEXT.md`, `02-build-tasks.md`, `phase-*-done.md`, gap and decision numbers) live in a local, untracked folder of another repository and are not in this one. The status pills and layout of the original page are lost in the conversion.
-> Trimmed 2026-10-14 to open work: the change log and the sections for finished phases were removed. Counts below are unchanged from the source.
-
 Delivery automation · plan of record
 
 # Remaining Build Work
@@ -8,6 +5,9 @@ Delivery automation · plan of record
 21 of the plan's 254 tasks are still open. Six of them are nice to have: a second platform, Phase 12, and Phase 23 / Task 2. Complete phases are counted but not listed. Phases 32, 36, 37, 41 and 42 are planned but not in the task list yet, so they are listed and not counted.
 
 233 / 254 done · 91.7% · 21 open · 15 required · 6 nice to have
+
+> It is the delivery automation's plan of record. Files it names (`NEXT.md`, `02-build-tasks.md`, `phase-*-done.md`, gap and decision numbers) live in a local, untracked folder of another repository and are not in this one. The status pills and layout of the original page are lost in the conversion.
+> Trimmed 2026-10-14 to open work: the change log and the sections for finished phases were removed. Counts below are unchanged from the source.
 
 ## What comes next — in priority order (2026-10-06)
 

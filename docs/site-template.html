@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>$title$</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Same look as the Delivery Factory pages: navy ground, spectrum accents, square edges, one dark theme. */
+:root {
+  color-scheme: dark;
+  --ink: #f7f8fb; --muted: #9ba7bd; --navy: #071020; --navy-2: #0a1427;
+  --line: rgba(156, 182, 226, .16); --line-strong: rgba(156, 182, 226, .26);
+  --cyan: #55e8ff;
+  --spectrum: linear-gradient(110deg, #55e8ff, #75a0ff 58%, #c588ff);
+  --sans: "Manrope", Arial, sans-serif;
+  --mono: "DM Mono", ui-monospace, Menlo, monospace;
+  --code-fg: #cdd6e4; --code-bg: rgba(156, 182, 226, .1); --code-line: rgba(156, 182, 226, .18);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--navy); color: var(--ink); font: 400 17px/1.65 var(--sans);
+  padding-block: clamp(3rem, 8vw, 6rem); padding-inline: clamp(1.25rem, 5vw, 4.5rem); }
+main { max-width: 56rem; margin: 0 auto; }
+main, section, div, ul, ol, li, p, h1, h2, h3, p.stats { margin: 1.6rem 0 2rem; padding: 1rem 0; border-block: 1px solid var(--line); font: 500 .85rem/1.6 var(--mono);
+  letter-spacing: .06em; text-transform: uppercase; color: var(--cyan); max-width: none; }
+blockquote { min-width: 0; }
+p, h1, h2, h3, a, li, td, th { overflow-wrap: anywhere; }
+a { color: var(--cyan); text-decoration-color: rgba(85, 232, 255, .4); text-underline-offset: .2em; }
+a:hover { text-decoration-color: currentColor; }
+::selection { background: var(--cyan); color: var(--navy); }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+strong { font-weight: 700; color: var(--ink); }
+em { font-style: italic; }
+code { font: .86em/1.4 var(--mono); color: var(--code-fg); background: var(--code-bg);
+  border: 1px solid var(--code-line); padding: .05em .35em; }
+pre { overflow-x: auto; padding: 1rem 1.2rem; background: var(--code-bg); border: 1px solid var(--code-line); }
+pre code { border: 0; background: none; padding: 0; }
+
+/* the line above the title and the phase label above each section */
+p:has(+ h1), p.label { margin: 0 0 1rem; font: 500 .8rem/1.45 var(--mono); letter-spacing: .1em;
+  text-transform: uppercase; display: flex; align-items: center; gap: .8rem; }
+p:has(+ h1)::before, p.label::before { content: ""; flex: none; width: 36px; height: 2px; background: var(--spectrum); }
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.04; letter-spacing: -.045em; font-weight: 600;
+  margin: 0 0 1.2rem; text-wrap: balance; }
+h1 + p { color: var(--muted); font-size: 1.15rem; max-width: 60ch; margin: 0 0 1rem; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -.03em; font-weight: 700;
+  margin: 0 0 1rem; text-wrap: balance; }
+h2:first-of-type { margin-top: 2.5rem; }
+p.label { margin-top: clamp(3rem, 6vw, 4.5rem); padding-top: 2rem; border-top: 1px solid var(--line-strong); }
+
+blockquote { margin: 0 0 2rem; padding: .2rem 0 .2rem 1.1rem; border-left: 2px solid var(--line-strong);
+  color: var(--muted); font-size: .95rem; }
+blockquote p { margin: 0 0 .5rem; }
+p { margin: 0 0 1rem; }
+section > p, main > p { max-width: 68ch; }
+
+/* lists: ordered lists become the rows of the reference index */
+ol { list-style: none; counter-reset: row; margin: 1.5rem 0; padding: 0; border-top: 1px solid var(--line); }
+ol > li { counter-increment: row; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem;
+  padding: 1.1rem .25rem; border-bottom: 1px solid var(--line); }
+ol > li::before { content: counter(row, decimal-leading-zero); color: var(--cyan); font: .85rem/1.9 var(--mono); }
+ol > li > * { grid-column: 2; }
+ul { margin: 0 0 1.2rem; padding-left: 1.3rem; }
+ul li { margin-bottom: .5rem; }
+li p { margin: 0 0 .4rem; }
+@media (max-width: 560px) {
+  ol > li { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  ol > li > * { grid-column: 1; }
+}
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font: 500 .78rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+</style>
+</head>
+<body>
+<main>
+$body$
+</main>
+</body>
+</html>
